@@ -51,7 +51,7 @@ public class CountryRepository : ICountryRespository
         await connection.OpenAsync();
 
         using var command = new SqlCommand(
-            "SELECT Id, Name, Capital, Region, Subregion, Population, Area, CurrencyCode, CurrencyName, Alpha3Code FROM Countries",
+            "SELECT Id, Name, Capital, Region, Subregion, Population, Area FROM Countries",
             connection);
 
         using var reader = await command.ExecuteReaderAsync();
@@ -69,7 +69,7 @@ public class CountryRepository : ICountryRespository
         await connection.OpenAsync();
 
         using var command = new SqlCommand(
-            "SELECT Id, Name, Capital, Region, Subregion, Population, Area, CurrencyCode, CurrencyName, Alpha3Code FROM Countries WHERE Id = @Id",
+            "SELECT Id, Name, Capital, Region, Subregion, Population, Area FROM Countries WHERE Id = @Id",
             connection);
 
         command.Parameters.AddWithValue("@Id", id);

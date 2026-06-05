@@ -1,3 +1,4 @@
+using PublicApiDemo.Repositories;
 using PublicApiDemo.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +7,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddHttpClient<ICountryService, CountryService>();
+builder.Services.AddScoped<ICountryRespository, CountryRepository>();
 
 var app = builder.Build();
 
