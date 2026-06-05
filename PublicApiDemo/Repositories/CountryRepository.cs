@@ -63,7 +63,7 @@ public class CountryRepository : ICountryRespository
         return countries;
     }
 
-    public async Task<Country> GetCountryByIdAsync(int id)
+    public async Task<Country?> GetCountryByIdAsync(int id)
     {
         using var connection = new SqlConnection(_connectionString);
         await connection.OpenAsync();
