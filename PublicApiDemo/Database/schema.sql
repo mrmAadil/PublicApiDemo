@@ -22,6 +22,5 @@ BEGIN
         Area FLOAT NOT NULL DEFAULT 0
     );
 
-    CREATE UNIQUE INDEX IX_Countries_Alpha3Code ON [dbo].[Countries](Alpha3Code);
 END
 GO
