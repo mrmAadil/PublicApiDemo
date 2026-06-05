@@ -9,7 +9,7 @@ public class CountryRepository : ICountryRespository
         throw new NotImplementedException();
     }
 
-    public Task<bool> AnyExistAsync(int id)
+    public Task<bool> AnyExistAsync()
     {
         throw new NotImplementedException();
     }
